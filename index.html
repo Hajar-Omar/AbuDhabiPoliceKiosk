@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dashbord</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/hover-min.css">
+    <link rel="stylesheet" href="./css/animate.min.css">
+    <link rel="stylesheet" href="./css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="./css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="./css/dataTables.bootstrap.min.css">
+
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+
+<body>
+
+    <header class="container-fluid">
+        <div class="col-lg-6 xol-md-6 col-sm-6 col-xs-6 pull-right widthFullMob">
+            <div class="row">
+                <section class="logoSection">
+                    <div class="navbar-header">
+                        <button type="button" id="sidebarCollapse" class="btn btn-danger navbar-btn">
+                            <i class="fa fa-bars"></i>
+                            <span>Toggle Sidebar</span>
+                        </button>
+                    </div>
+                    <a class="logoLink" href="./index.html">
+                        <img src="./images/logo.png" alt="logo here!">
+                    </a>
+                </section>
+            </div>
+        </div>
+        <div class="col-lg-6 xol-md-6 col-sm-6 col-xs-6 pull-left widthFullMob">
+            <div class="row">
+                <div class="userProfile">
+                    <section class="userProfileImg">
+                        <img src="./images/user.png" alt="user">
+                    </section>
+                </div>
+                <section class="userProfileData">
+                    <h5>
+                        <b>Welcome</b> Muhammed Abeer Abid</h5>
+                    <a class="logOut" href="#">
+                        <i class="fa fa-lock" aria-hidden="true"></i>&nbsp;Logout
+                    </a>
+                </section>
+            </div>
+        </div>
+    </header>
+
+    <div style="clear:both;"></div>
+
+    <!--******************************* end of header ***********************************-->
+
+
+
+    <!--*******************************  menu and content ***********************************-->
+    <section>
+        <!--******************  side menu  ********************-->
+        <div>
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <ul class="list-unstyled components">
+                    <li class="selected">
+                        <a data-target="#reports" data-toggle="collapse" aria-expanded="false">
+                            <img src="./images/reportsIcon.png" alt="">
+                            <span class="menuItem"> strategic reports</span>
+                            <i class="fa fa-angle-down angleDown" aria-hidden="true"></i>
+                        </a>
+                        <ul class="collapse list-unstyled" id="reports">
+                            <li class="li-second-level">
+                                <a href="./index.html" class="second-level">Tabular view</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#tasks" data-target="#tasks" data-toggle="collapse" aria-expanded="false">
+                            <img src="./images/tasksIcon.png" alt="">
+                            <span class="menuItem">Interrupted tasks</span>
+                            <i class="fa fa-angle-down angleDown" aria-hidden="true"></i>
+                        </a>
+                        <ul class="collapse list-unstyled" id="tasks">
+                            <li class="li-second-level">
+                                <a href="./pages/tasks.html" class="second-level">Tabular view</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="./images/kioskIcon.png" alt="">
+                            <span class="menuItem"> KIOSK Management</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="./images/exceptionsIcon.png" alt="">
+                            <span class="menuItem">exceptions</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="collapse" data-target="#security" aria-expanded="false">
+                            <img src="./images/securityIcon.png" alt="">
+                            <span class="menuItem">security</span>
+                            <i class="fa fa-angle-down angleDown" aria-hidden="true"></i>
+                        </a>
+                        <ul class="collapse list-unstyled" id="security">
+                            <li class="li-second-level">
+                                <a href="#" class="second-level">Users</a>
+                            </li>
+                            <li class="li-second-level">
+                                <a href="./pages/security.html" class="second-level">Groups</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!--******************  end of side menu  ********************-->
+
+
+
+        <!--******************  content  ********************-->
+        <article class="" id="content">
+            <!--******************  advanced search  ********************-->
+            <div>
+                <div class="row">
+                    <div id="adv-search" class="col-lg-12 col-md-12">
+                        <div class="input-group searchInput">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn dropdownToggle" data-toggle="collapse" data-target="#demo">
+                                    <span class="searchBtn">Filter / Advanced Search</span>
+                                    <i class="fa fa-angle-down dropdownAngleDown" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="demo" class="collapse col-xs-12 collapsedForm">
+                            <form class="form-horizontal" role="form">
+                                <div class="row">
+                                    <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <label for="dateF" class="control-label">Date From:</label>
+                                        <div class='input-group date' id='dateFrom'>
+                                            <input type="text" id="dateF" class="form-control" />
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <label for="dateT" class="control-label">Date To:</label>
+                                        <div class='input-group date' id='dateTo'>
+                                            <input type="text" id="dateT" class="form-control" />
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <label for="timeF" class="control-label">Time From:</label>
+                                        <div class="input-group clockpicker">
+                                            <input type="text" id="timeF" value="00:00" class="form-control" />
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <label for="timeT" class="control-label">Time To:</label>
+                                        <div class="input-group clockpicker">
+                                            <input type="text" id="timeT" value="00:00" class="form-control" />
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <label for="serviceChannel" class="control-label">Service Channel:</label>
+                                        <select id="serviceChannel" class="form-control">
+                                            <option value="option1">option one</option>
+                                            <option value="option2">option two</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <label for="paymentMethod" class="control-label">Payment Method:</label>
+                                        <select id="paymentMethod" class="form-control">
+                                            <option value="option1">option one</option>
+                                            <option value="option2">option two</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <label for="status" class="control-label">Status:</label>
+                                        <select id="status" class="form-control">
+                                            <option value="option1">option one</option>
+                                            <option value="option2">option two</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <label class="control-label">Request Type:</label>
+                                        <dl class="dropdown multipleSelect">
+                                            <dt>
+                                                <a href="#">
+                                                    <span class="hida">Select
+
+                                                    </span>
+                                                    <i class="fa fa-caret-down pull-right" aria-hidden="true"></i>
+                                                    <p class="multiSel"></p>
+                                                </a>
+                                            </dt>
+                                            <dd>
+                                                <div class="mutliSelect">
+                                                    <ul>
+                                                        <li>
+                                                            <div class="checkbox">
+                                                                <label>
+                                                                    <input type="checkbox" value="option one">option one
+                                                                    <span class="cr">
+                                                                        <i class="cr-icon fa fa-check"></i>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="checkbox">
+                                                                <label>
+                                                                    <input type="checkbox" value="option two">option two
+                                                                    <span class="cr">
+                                                                        <i class="cr-icon fa fa-check"></i>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="checkbox">
+                                                                <label>
+                                                                    <input type="checkbox" value="option three">option three
+                                                                    <span class="cr">
+                                                                        <i class="cr-icon fa fa-check"></i>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="checkbox">
+                                                                <label>
+                                                                    <input type="checkbox" value="option four">option four
+                                                                    <span class="cr">
+                                                                        <i class="cr-icon fa fa-check"></i>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="checkbox">
+                                                                <label>
+                                                                    <input type="checkbox" value="option five">option five
+                                                                    <span class="cr">
+                                                                        <i class="cr-icon fa fa-check"></i>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="checkbox">
+                                                                <label>
+                                                                    <input type="checkbox" value="option six">option six
+                                                                    <span class="cr">
+                                                                        <i class="cr-icon fa fa-check"></i>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <label for="customerName" class="control-label">Customer Name</label>
+                                        <input type="text" id="customerName" class="form-control" />
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <label for="mobileNumber" class="control-label">Mobile Number</label>
+                                        <input type="text" id="mobileNumber" class="form-control" />
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <label for="trafficFileNumber" class="control-label">TrafficFile Number</label>
+                                        <input type="text" id="trafficFileNumber" class="form-control" />
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <label for="requestNumber" class="control-label">Request Number</label>
+                                        <input type="text" id="requestNumber" class="form-control" />
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12 searchItem">
+                                        <input type="submit" value="Update Service" class="btn btnSearch" />
+                                        <input type="reset" value="Reset" class="btn btn-default btnReset" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--******************  end of advanced search  ********************-->
+
+            <!--************************** main content **************************-->
+
+
+
+            <div>
+                <!-- dropdown -->
+
+                <!--    -->
+
+                <section class="fromToDateRange">
+                    <h5 class="titleSection"> from ... to ... (DATE RANGE)</h5>
+
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 firstCustPadding">
+                            <div class="serviceBlock">
+                                <div class="serviceBlockHead">
+                                    <img src="./images/driverIcon.png" alt="driver">
+                                    <h4>Drivers services</h4>
+                                </div>
+
+                                <div class="serviceBlockBody">
+
+                                    <section class="oneProgress">
+                                        <h6>under process</h6>
+
+                                        <div class="progress skill-bar">
+                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                                            </div>
+                                        </div>
+                                        <div class="stats">
+                                            <div class="stats-number money" data-from="0" data-to="2908">0</div>
+                                        </div>
+                                    </section>
+                                    <section class="oneProgress">
+                                        <h6>interrupted</h6>
+                                        <div class="progress skill-bar">
+                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                                            </div>
+                                        </div>
+                                        <div class="stats">
+                                            <div class="stats-number money" data-from="0" data-to="6000">0</div>
+                                        </div>
+                                    </section>
+                                    <section class="oneProgress">
+                                        <h6>completed</h6>
+                                        <div class="progress skill-bar">
+                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100">
+                                            </div>
+                                        </div>
+                                        <div class="stats">
+                                            <div class="stats-number money" data-from="0" data-to="150">0</div>
+                                        </div>
+                                    </section>
+                                    <section class="oneProgress">
+                                        <h6>revenue</h6>
+                                        <div class="progress skill-bar">
+                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+                                            </div>
+                                        </div>
+                                        <div class="stats">
+                                            <div class="stats-number money" data-from="0" data-to="999">0</div>
+                                        </div>
+                                    </section>
+                                    <section class="oneProgress">
+                                        <h6>revenue</h6>
+                                        <div class="progress skill-bar">
+                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+                                            </div>
+                                        </div>
+                                        <div class="stats">
+                                            <div class="stats-number money" data-from="0" data-to="999">0</div>
+                                        </div>
+                                    </section>
+                                    <section class="oneProgress">
+                                        <h6>revenue</h6>
+                                        <div class="progress skill-bar">
+                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+                                            </div>
+                                        </div>
+                                        <div class="stats">
+                                            <div class="stats-number money" data-from="0" data-to="999">0</div>
+                                        </div>
+                                    </section>
+                                    <section class="oneProgress">
+                                        <h6>revenue</h6>
+                                        <div class="progress skill-bar">
+                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+                                            </div>
+                                        </div>
+                                        <div class="stats">
+                                            <div class="stats-number money" data-from="0" data-to="999">0</div>
+                                        </div>
+                                    </section>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 custPadding">
+                            <div class="serviceBlock">
+                                <div class="serviceBlockHead">
+                                    <img src="./images/driverIcon.png" alt="driver">
+                                    <h4>Drivers services</h4>
+                                </div>
+
+                                <div class="serviceBlockBody">
+
+                                    <section class="oneProgress">
+                                        <h6>under process</h6>
+                                        <div class="progress skill-bar">
+                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                                            </div>
+                                        </div>
+                                        <div class="stats">
+                                            <div class="stats-number money" data-from="0" data-to="500">0</div>
+                                        </div>
+                                    </section>
+                                    <section class="oneProgress">
+                                        <h6>interrupted</h6>
+                                        <div class="progress skill-bar">
+                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                                            </div>
+                                        </div>
+                                        <div class="stats">
+                                            <div class="stats-number money" data-from="0" data-to="380">0</div>
+                                        </div>
+                                    </section>
+                                    <section class="oneProgress">
+                                        <h6>completed</h6>
+                                        <div class="progress skill-bar">
+                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100">
+                                            </div>
+                                        </div>
+                                        <div class="stats">
+                                            <div class="stats-number money" data-from="0" data-to="150">0</div>
+                                        </div>
+                                    </section>
+                                    <section class="oneProgress">
+                                        <h6>revenue</h6>
+                                        <div class="progress skill-bar">
+                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+                                            </div>
+                                        </div>
+                                        <div class="stats">
+                                            <div class="stats-number money" data-from="0" data-to="999">0</div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 custPadding">
+                            <div class="serviceBlock">
+                                <div class="serviceBlockHead">
+                                    <img src="./images/vehicle.png" alt="driver">
+                                    <h4>Vehicle Services</h4>
+                                </div>
+
+                                <div class="serviceBlockBody">
+
+                                    <section class="oneProgress">
+                                        <h6>under process</h6>
+                                        <div class="progress skill-bar">
+                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                                            </div>
+                                        </div>
+                                        <div class="stats">
+                                            <div class="stats-number money" data-from="0" data-to="2908">0</div>
+                                        </div>
+                                    </section>
+                                    <section class="oneProgress">
+                                        <h6>interrupted</h6>
+                                        <div class="progress skill-bar">
+                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                                            </div>
+                                        </div>
+                                        <div class="stats">
+                                            <div class="stats-number money" data-from="0" data-to="380">0</div>
+                                        </div>
+                                    </section>
+                                    <section class="oneProgress">
+                                        <h6>completed</h6>
+                                        <div class="progress skill-bar">
+                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100">
+                                            </div>
+                                        </div>
+                                        <div class="stats">
+                                            <div class="stats-number money" data-from="0" data-to="150">0</div>
+                                        </div>
+                                    </section>
+                                    <section class="oneProgress">
+                                        <h6>revenue</h6>
+                                        <div class="progress skill-bar">
+                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+                                            </div>
+                                        </div>
+                                        <div class="stats">
+                                            <div class="stats-number money" data-from="0" data-to="1000">0</div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 lastCustPadding">
+                            <div class="serviceBlock">
+                                <div class="serviceBlockHead">
+                                    <img src="./images/payment.png" alt="driver">
+                                    <h4>Payments</h4>
+                                </div>
+
+                                <div class="serviceBlockBody">
+
+                                    <section class="oneProgress">
+                                        <h6>under process</h6>
+                                        <div class="progress skill-bar">
+                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                                            </div>
+                                        </div>
+                                        <div class="stats">
+                                            <div class="stats-number money" data-from="0" data-to="2908">0</div>
+                                        </div>
+                                    </section>
+                                    <section class="oneProgress">
+                                        <h6>interrupted</h6>
+                                        <div class="progress skill-bar">
+                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                                            </div>
+                                        </div>
+                                        <div class="stats">
+                                            <div class="stats-number money" data-from="0" data-to="380">0</div>
+                                        </div>
+                                    </section>
+                                    <section class="oneProgress">
+                                        <h6>completed</h6>
+                                        <div class="progress skill-bar">
+                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100">
+                                            </div>
+                                        </div>
+                                        <div class="stats">
+                                            <div class="stats-number money" data-from="0" data-to="150">0</div>
+                                        </div>
+                                    </section>
+                                    <section class="oneProgress">
+                                        <h6>revenue</h6>
+                                        <div class="progress skill-bar">
+                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+                                            </div>
+                                        </div>
+                                        <div class="stats">
+                                            <div class="stats-number money" data-from="0" data-to="999">0</div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+
+
+
+                <div class="groupedBarCharts">
+                    <div class="row">
+                        <section class="col-lg-6 col-md-6 col-sm-12 col-xs-12 firstCustPadding">
+                            <div class="titles">
+                                <h5 class="titleSection">requests VS time</h5>
+                                <h6 class="titleGBChart">Driver services</h6>
+                            </div>
+                            <div class="firstGBChart">
+                                <div id="barchartOne"></div>
+                                <!--  width="480" height="250"-->
+                            </div>
+                        </section>
+                        <section class="col-lg-6 col-md-6 col-sm-12 col-xs-12 lastCustPadding">
+                            <div class="titles">
+                                <h6 class="titleGBChart secontTitleChart">vehicle services</h6>
+                            </div>
+                            <div class="secondGBChart">
+                                <div id="barchartTwo"></div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+
+
+
+
+                <section class="LineMarkersCharts">
+                    <div class="row">
+                        <section class="col-lg-6 col-md-6 col-sm-12 col-xs-12 firstCustPadding">
+                            <div class="titles">
+                                <h5 class="titleSection">requests VS time</h5>
+                                <h6 class="titleGBChart">Cash</h6>
+                            </div>
+                            <div class="firstGBChart">
+                                <div id="firstLineMarkersChart" style="height: 215px; width: 100%;"></div>
+                            </div>
+                        </section>
+                        <section class="col-lg-6 col-md-6 col-sm-12 col-xs-12 lastCustPadding">
+                            <div class="titles">
+                                <h6 class="titleGBChart secontTitleChart">e-payment</h6>
+                            </div>
+                            <div class="secondGBChart">
+                                <div id="secondLineMarkersChart" style="height: 215px; width: 100%;"></div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+
+
+
+
+
+
+                <section class="LineMarkersChartsTwo">
+                    <div class="titles">
+                        <h5 class="titleSection">channels VS time</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="LineMarkersChartsTwoContainer">
+                                <div class="row">
+                                    <div class="col-sm-3 col-xs-12">
+                                        <!-- required for floating -->
+                                        <!-- Nav tabs -->
+                                        <ul class="nav nav-tabs tabs-left">
+                                            <li class="active">
+                                                <a data-target="#home" data-toggle="tab" class="tabLink">
+                                                    <img src="./images/driverIcon.png" alt="driver">
+                                                    <h4>Drivers services</h4>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a data-target="#profile" data-toggle="tab" class="tabLink">
+                                                    <img src="./images/vehicle.png" alt="driver">
+                                                    <h4>Vehicle Services</h4>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-9 col-xs-12">
+                                        <!-- Tab panes -->
+                                        <div class="row">
+                                            <div class="tab-content">
+                                                <div class="tab-pane active" id="home">
+                                                    <section class="col-lg-8 col-md-8 col-sm-12 col-xs-12 fullWCol">
+                                                        <div id="secondLineMarkersChartTwo" style="height: 280px; width: 100%;"></div>
+                                                    </section>
+
+                                                </div>
+                                                <div class="tab-pane" id="profile">
+                                                    <section class="col-lg-8 col-md-8 col-sm-12 col-xs-12 fullWCol">
+                                                        <div id="secondLineMarkersChartTwo2" style="height: 280px; width: 100%;"></div>
+                                                    </section>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="clearfix"></div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+        </article>
+        <!--****************** end of content  ********************-->
+
+
+    </section>
+    <!--******************************* end of menu and content ***********************************-->
+
+
+
+
+
+
+
+
+
+    <!-- scripts -->
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+
+    <script src="./js/waypoints.js"></script>
+    <script src="./js/jquery.countTo.js"></script>
+    <script src="./js/d3.v4.min.js"></script>
+    <script src="./js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="./js/canvasjs.min.js"></script>
+    <script src="./js/moment-with-locales.js"></script>
+    <script src="./js/bootstrap-datetimepicker.js"></script>
+
+    <script src="./js/jquery.dataTables.min.js"></script>
+    <script src="./js/dataTables.bootstrap.min.js"></script>
+
+    <script src="./js/chartsScript.js"></script>
+    <script src="./js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<div ng-controller="advSearchController">
+    <div class="row">
+        <div id="adv-search" class="col-lg-12 col-md-12">
+            <div class="input-group searchInput">
+
+                <div class="input-group-btn">
+                    <button type="button" class="btn dropdownToggle" data-toggle="collapse" data-target="#demo">
+                            <span class="searchBtn">Filter / Advanced Search</span>
+                        <i class="fa fa-angle-down dropdownAngleDown" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="demo" class="collapse col-xs-12 collapsedForm">
+                <form class="form-horizontal" role="form" ng-submit="submitUpdateServiceForm()">
+                    <div class="row">
+                        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <label for="dateF" class="control-label">Date From:</label>
+                            <div class='input-group date' id='dateFrom'>
+                                <input type="text" id="dateF" class="form-control" ng-model="service.dateFrom" />
+                                <span class="input-group-addon">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <label for="dateT" class="control-label">Date To:</label>
+                            <div class='input-group date' id='dateTo'>
+                                <input type="text" id="dateT" class="form-control" ng-model="service.dateTo" />
+                                <span class="input-group-addon">
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <label for="timeF" class="control-label">Time From:</label>
+                            <div class="input-group clockpicker">
+                                <input type="text" id="timeF" value="00:00" class="form-control" ng-model="service.timeFrom" />
+                                <span class="input-group-addon">
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <label for="timeT" class="control-label">Time To:</label>
+                            <div class="input-group clockpicker">
+                                <input type="text" id="timeT" value="00:00" class="form-control" ng-model="service.timeTo" />
+                                <span class="input-group-addon">
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <label for="serviceChannel" class="control-label">Service Channel:</label>
+                            <select id="serviceChannel" class="form-control" ng-model="service.serviceChannel">
+                                <option value="option1">option one</option>
+                                <option value="option2">option two</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <label for="paymentMethod" class="control-label">Payment Method:</label>
+                            <select id="paymentMethod" class="form-control" ng-model="service.paymentMethod">
+                                <option value="option1">option one</option>
+                                <option value="option2">option two</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <label for="status" class="control-label">Status:</label>
+                            <select id="status" class="form-control" ng-model="service.status">
+                                <option value="option1">option one</option>
+                                <option value="option2">option two</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <label for="requestType" class="control-label">Request Type:</label>
+                            <select id="requestType" class="form-control" ng-model="service.requestType">
+                                <option value="option1">option one</option>
+                                <option value="option2">option two</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <label for="customerName" class="control-label">Customer Name</label>
+                            <input type="text" id="customerName" class="form-control" ng-model="service.customerName" />
+                        </div>
+                        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <label for="mobileNumber" class="control-label">Mobile Number</label>
+                            <input type="text" id="mobileNumber" class="form-control" ng-model="service.mobileNumber" />
+                        </div>
+                        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <label for="trafficFileNumber" class="control-label">TrafficFile Number</label>
+                            <input type="text" id="trafficFileNumber" class="form-control" ng-model="service.trafficFileNumber" />
+                        </div>
+                        <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <label for="requestNumber" class="control-label">Request Number</label>
+                            <input type="text" id="requestNumber" class="form-control" ng-model="service.requestNumber" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12 searchItem">
+                            <input type="submit" value="Update Service" class="btn btnSearch" />
+                            <input type="reset" value="Reset" ng-click="resetForm()" class="btn btn-default btnReset" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

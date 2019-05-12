@@ -1,0 +1,63 @@
+<div ng-controller="sideMenuController">
+    <!-- Sidebar Holder -->
+    <nav id="sidebar">
+
+        <ul class="list-unstyled components">
+
+            <li class="selected">
+                <a data-target="#reports" data-toggle="collapse" aria-expanded="false">
+                    <img src="./images/reportsIcon.png" alt="">
+                    <span class="menuItem"> strategic reports</span>
+                    <i class="fa fa-angle-down angleDown" aria-hidden="true"></i>
+                </a>
+                <ul class="collapse list-unstyled" id="reports">
+                    <li class="li-second-level">
+                        <a href="#/!" class="second-level route-link">Tabular view</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#tasks" data-target="#tasks" data-toggle="collapse" aria-expanded="false">
+                    <img src="./images/tasksIcon.png" alt="">
+                    <span class="menuItem">Interrupted tasks</span>
+                    <i class="fa fa-angle-down angleDown" aria-hidden="true"></i>
+                </a>
+                <ul class="collapse list-unstyled" id="tasks">
+                    <li class="li-second-level">
+                        <a href="#!tasks" class="second-level route-link">Tabular view</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/kioskIcon.png" alt="">
+                    <span class="menuItem"> KIOSK Management</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/exceptionsIcon.png" alt="">
+                    <span class="menuItem">exceptions</span>
+                </a>
+            </li>
+
+            <li>
+                <a data-toggle="collapse" data-target="#security" aria-expanded="false"> 
+                    <img src="./images/securityIcon.png" alt="">
+                    <span class="menuItem">security</span>
+                    <i class="fa fa-angle-down angleDown" aria-hidden="true"></i>
+                </a>
+                <ul class="collapse list-unstyled" id="security">
+                    <li class="li-second-level">
+                        <a href="#" class="second-level">Users</a>
+                    </li>
+                    <li class="li-second-level">
+                        <a href="#!group" class="second-level route-link">Groups</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        
+    </nav>
+</div>

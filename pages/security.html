@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Security</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/hover-min.css">
+    <link rel="stylesheet" href="../css/animate.min.css">
+    <link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="../css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="../css/dataTables.bootstrap.min.css">
+
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+
+<body>
+
+    <header class="container-fluid">
+        <div class="col-lg-6 xol-md-6 col-sm-6 col-xs-6 pull-right widthFullMob">
+            <div class="row">
+                <section class="logoSection">
+                    <div class="navbar-header">
+                        <button type="button" id="sidebarCollapse" class="btn btn-danger navbar-btn">
+                            <i class="fa fa-bars"></i>
+                            <span>Toggle Sidebar</span>
+                        </button>
+                    </div>
+                    <a class="logoLink" href="../index.html">
+                        <img src="../images/logo.png" alt="logo here!">
+                    </a>
+                </section>
+            </div>
+        </div>
+        <div class="col-lg-6 xol-md-6 col-sm-6 col-xs-6 pull-left widthFullMob">
+            <div class="row">
+                <div class="userProfile">
+                    <section class="userProfileImg">
+                        <img src="../images/user.png" alt="user">
+                    </section>
+                </div>
+                <section class="userProfileData">
+                    <h5>
+                        <b>Welcome</b> Muhammed Abeer Abid</h5>
+                    <a class="logOut" href="#">
+                        <i class="fa fa-lock" aria-hidden="true"></i>&nbsp;Logout
+                    </a>
+                </section>
+            </div>
+        </div>
+    </header>
+
+    <div style="clear:both;"></div>
+
+    <!--******************************* end of header ***********************************-->
+
+
+
+    <!--*******************************  menu and content ***********************************-->
+    <section>
+        <!--******************  side menu  ********************-->
+        <div>
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <ul class="list-unstyled components">
+                    <li class="selected">
+                        <a data-target="#reports" data-toggle="collapse" aria-expanded="false">
+                            <img src="../images/reportsIcon.png" alt="">
+                            <span class="menuItem"> strategic reports</span>
+                            <i class="fa fa-angle-down angleDown" aria-hidden="true"></i>
+                        </a>
+                        <ul class="collapse list-unstyled" id="reports">
+                            <li class="li-second-level">
+                                <a href="../index.html" class="second-level">Tabular view</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#tasks" data-target="#tasks" data-toggle="collapse" aria-expanded="false">
+                            <img src="../images/tasksIcon.png" alt="">
+                            <span class="menuItem">Interrupted tasks</span>
+                            <i class="fa fa-angle-down angleDown" aria-hidden="true"></i>
+                        </a>
+                        <ul class="collapse list-unstyled" id="tasks">
+                            <li class="li-second-level">
+                                <a href="./tasks.html" class="second-level">Tabular view</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../images/kioskIcon.png" alt="">
+                            <span class="menuItem"> KIOSK Management</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../images/exceptionsIcon.png" alt="">
+                            <span class="menuItem">exceptions</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="collapse" data-target="#security" aria-expanded="false">
+                            <img src="../images/securityIcon.png" alt="">
+                            <span class="menuItem">security</span>
+                            <i class="fa fa-angle-down angleDown" aria-hidden="true"></i>
+                        </a>
+                        <ul class="collapse list-unstyled" id="security">
+                            <li class="li-second-level">
+                                <a href="#" class="second-level">Users</a>
+                            </li>
+                            <li class="li-second-level">
+                                <a href="./security.html" class="second-level">Groups</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!--******************  end of side menu  ********************-->
+
+
+
+        <!--******************  content  ********************-->
+        <article class="" id="content">
+            <!--******************  advanced search  ********************-->
+            <div>
+                <div class="row">
+                    <div id="adv-search" class="col-lg-12 col-md-12">
+                        <div class="input-group searchInput">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn dropdownToggle" data-toggle="collapse" data-target="#demo">
+                                    <span class="searchBtn">Filter / Advanced Search</span>
+                                    <i class="fa fa-angle-down dropdownAngleDown" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="demo" class="collapse col-xs-12 collapsedForm">
+                            <form class="form-horizontal" role="form">
+                                <div class="row">
+                                    <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <label for="dateF" class="control-label">Date From:</label>
+                                        <div class='input-group date' id='dateFrom'>
+                                            <input type="text" id="dateF" class="form-control" />
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <label for="dateT" class="control-label">Date To:</label>
+                                        <div class='input-group date' id='dateTo'>
+                                            <input type="text" id="dateT" class="form-control" />
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <label for="timeF" class="control-label">Time From:</label>
+                                        <div class="input-group clockpicker">
+                                            <input type="text" id="timeF" value="00:00" class="form-control" />
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <label for="timeT" class="control-label">Time To:</label>
+                                        <div class="input-group clockpicker">
+                                            <input type="text" id="timeT" value="00:00" class="form-control" />
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <label for="serviceChannel" class="control-label">Service Channel:</label>
+                                        <select id="serviceChannel" class="form-control">
+                                            <option value="option1">option one</option>
+                                            <option value="option2">option two</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <label for="paymentMethod" class="control-label">Payment Method:</label>
+                                        <select id="paymentMethod" class="form-control">
+                                            <option value="option1">option one</option>
+                                            <option value="option2">option two</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <label for="status" class="control-label">Status:</label>
+                                        <select id="status" class="form-control">
+                                            <option value="option1">option one</option>
+                                            <option value="option2">option two</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                            <label class="control-label">Request Type:</label>
+                                            <dl class="dropdown multipleSelect">
+                                                <dt>
+                                                    <a href="#">
+                                                        <span class="hida">Select
+    
+                                                        </span>
+                                                        <i class="fa fa-caret-down pull-right" aria-hidden="true"></i>
+                                                        <p class="multiSel"></p>
+                                                    </a>
+                                                </dt>
+                                                <dd>
+                                                    <div class="mutliSelect">
+                                                        <ul>
+                                                            <li>
+                                                                <div class="checkbox">
+                                                                    <label>
+                                                                        <input type="checkbox" value="option one">option one
+                                                                        <span class="cr">
+                                                                            <i class="cr-icon fa fa-check"></i>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="checkbox">
+                                                                    <label>
+                                                                        <input type="checkbox" value="option two">option two
+                                                                        <span class="cr">
+                                                                            <i class="cr-icon fa fa-check"></i>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="checkbox">
+                                                                    <label>
+                                                                        <input type="checkbox" value="option three">option three
+                                                                        <span class="cr">
+                                                                            <i class="cr-icon fa fa-check"></i>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="checkbox">
+                                                                    <label>
+                                                                        <input type="checkbox" value="option four">option four
+                                                                        <span class="cr">
+                                                                            <i class="cr-icon fa fa-check"></i>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="checkbox">
+                                                                    <label>
+                                                                        <input type="checkbox" value="option five">option five
+                                                                        <span class="cr">
+                                                                            <i class="cr-icon fa fa-check"></i>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="checkbox">
+                                                                    <label>
+                                                                        <input type="checkbox" value="option six">option six
+                                                                        <span class="cr">
+                                                                            <i class="cr-icon fa fa-check"></i>
+                                                                        </span>
+                                                                    </label>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <label for="customerName" class="control-label">Customer Name</label>
+                                        <input type="text" id="customerName" class="form-control" />
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <label for="mobileNumber" class="control-label">Mobile Number</label>
+                                        <input type="text" id="mobileNumber" class="form-control" />
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <label for="trafficFileNumber" class="control-label">TrafficFile Number</label>
+                                        <input type="text" id="trafficFileNumber" class="form-control" />
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <label for="requestNumber" class="control-label">Request Number</label>
+                                        <input type="text" id="requestNumber" class="form-control" />
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12 searchItem">
+                                        <input type="submit" value="Update Service" class="btn btnSearch" />
+                                        <input type="reset" value="Reset" class="btn btn-default btnReset" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--******************  end of advanced search  ********************-->
+
+
+<!--************************** main content **************************-->
+
+
+<div >
+        
+            <section class="services">
+                <table id="exampleTable" class="table table-hover table-bordered dataTableEx" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>index</th>
+                            <th>service name</th>
+                            <th>grant</th>
+                            <th>deny</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Service Name1</td>
+                            <td>
+                                <div class="checkbox">
+                                    <label style="font-size: 1em">
+                                        <input type="checkbox" value="" checked>
+                                        <span class="cr">
+                                            <i class="cr-icon fa fa-check"></i>
+                                        </span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox">
+                                    <label style="font-size: 1em">
+                                        <input type="checkbox" value="" checked>
+                                        <span class="cr">
+                                            <i class="cr-icon fa fa-check"></i>
+                                        </span>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Service Name2</td>
+                            <td>
+                                <div class="checkbox">
+                                    <label style="font-size: 1em">
+                                        <input type="checkbox" value="" checked>
+                                        <span class="cr">
+                                            <i class="cr-icon fa fa-check"></i>
+                                        </span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox">
+                                    <label style="font-size: 1em">
+                                        <input type="checkbox" value="" checked>
+                                        <span class="cr">
+                                            <i class="cr-icon fa fa-check"></i>
+                                        </span>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Service Name3</td>
+                            <td>
+                                <div class="checkbox">
+                                    <label style="font-size: 1em">
+                                        <input type="checkbox" value="" checked>
+                                        <span class="cr">
+                                            <i class="cr-icon fa fa-check"></i>
+                                        </span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox">
+                                    <label style="font-size: 1em">
+                                        <input type="checkbox" value="" checked>
+                                        <span class="cr">
+                                            <i class="cr-icon fa fa-check"></i>
+                                        </span>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Service Name4</td>
+                            <td>
+                                <div class="checkbox">
+                                    <label style="font-size: 1em">
+                                        <input type="checkbox" value="" checked>
+                                        <span class="cr">
+                                            <i class="cr-icon fa fa-check"></i>
+                                        </span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox">
+                                    <label style="font-size: 1em">
+                                        <input type="checkbox" value="" checked>
+                                        <span class="cr">
+                                            <i class="cr-icon fa fa-check"></i>
+                                        </span>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Service Name5</td>
+                            <td>
+                                <div class="checkbox">
+                                    <label style="font-size: 1em">
+                                        <input type="checkbox" value="" checked>
+                                        <span class="cr">
+                                            <i class="cr-icon fa fa-check"></i>
+                                        </span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox">
+                                    <label style="font-size: 1em">
+                                        <input type="checkbox" value="" checked>
+                                        <span class="cr">
+                                            <i class="cr-icon fa fa-check"></i>
+                                        </span>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        
+            <section class="channels">
+                <table id="exampleTableTwo" class="table table-hover table-bordered dataTableEx" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>index</th>
+                            <th>Channel name</th>
+                            <th>grant</th>
+                            <th>deny</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Service Name1</td>
+                            <td>
+                                <div class="checkbox">
+                                    <label style="font-size: 1em">
+                                        <input type="checkbox" value="" checked>
+                                        <span class="cr">
+                                            <i class="cr-icon fa fa-check"></i>
+                                        </span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox">
+                                    <label style="font-size: 1em">
+                                        <input type="checkbox" value="" checked>
+                                        <span class="cr">
+                                            <i class="cr-icon fa fa-check"></i>
+                                        </span>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Service Name2</td>
+                            <td>
+                                <div class="checkbox">
+                                    <label style="font-size: 1em">
+                                        <input type="checkbox" value="" checked>
+                                        <span class="cr">
+                                            <i class="cr-icon fa fa-check"></i>
+                                        </span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox">
+                                    <label style="font-size: 1em">
+                                        <input type="checkbox" value="" checked>
+                                        <span class="cr">
+                                            <i class="cr-icon fa fa-check"></i>
+                                        </span>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Service Name3</td>
+                            <td>
+                                <div class="checkbox">
+                                    <label style="font-size: 1em">
+                                        <input type="checkbox" value="" checked>
+                                        <span class="cr">
+                                            <i class="cr-icon fa fa-check"></i>
+                                        </span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox">
+                                    <label style="font-size: 1em">
+                                        <input type="checkbox" value="" checked>
+                                        <span class="cr">
+                                            <i class="cr-icon fa fa-check"></i>
+                                        </span>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Service Name4</td>
+                            <td>
+                                <div class="checkbox">
+                                    <label style="font-size: 1em">
+                                        <input type="checkbox" value="" checked>
+                                        <span class="cr">
+                                            <i class="cr-icon fa fa-check"></i>
+                                        </span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox">
+                                    <label style="font-size: 1em">
+                                        <input type="checkbox" value="" checked>
+                                        <span class="cr">
+                                            <i class="cr-icon fa fa-check"></i>
+                                        </span>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Service Name5</td>
+                            <td>
+                                <div class="checkbox">
+                                    <label style="font-size: 1em">
+                                        <input type="checkbox" value="" checked>
+                                        <span class="cr">
+                                            <i class="cr-icon fa fa-check"></i>
+                                        </span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox">
+                                    <label style="font-size: 1em">
+                                        <input type="checkbox" value="" checked>
+                                        <span class="cr">
+                                            <i class="cr-icon fa fa-check"></i>
+                                        </span>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        
+        
+        
+        
+        
+            <section class="row">
+                <div class="drag subject-info-box-1 col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                    <article>available users</article>
+                    <div class="selectable selectableOne">
+                        <select multiple="multiple" id='lstBox1' class="form-control">
+                            <option value="username1">user name name 1</option>
+                            <option value="username2">user name name 2</option>
+                            <option value="username3">user name name 3</option>
+                            <option value="username4">user name name 4</option>
+                            <option value="username5">user name name 5</option>
+                            <option value="username6">user name name 6</option>
+                        </select>
+                    </div>
+                </div>
+        
+                <div class="subject-info-arrows text-center col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                    <section class="emptySpace">&nbsp;</section>
+                    <div class="selectable selectableTwo"> 
+                        <a id='btnRight' class="btn btn-default" ><i class="fa fa-angle-right" aria-hidden="true"></i></a> 
+                        <a id='btnAllRight' class="btn btn-default" ><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                        <a id='btnLeft'class="btn btn-default" ><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                        <a id='btnAllLeft'class="btn btn-default" ><i class="fa fa-angle-double-left" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+        
+                <div class="drag subject-info-box-2 col-lg-5 col-md-5 col-sm-12 col-xs-12">
+        
+                    <article>assigned users</article>
+                    <div class="selectable selectableThree">
+                        <select multiple="multiple" id='lstBox2' class="form-control">
+                            <option value="username7">user name name 7</option>
+                            <option value="username8">user name name 8</option>
+                            <option value="username9">user name name 9</option>
+                        </select>
+                    </div>
+        
+                </div>
+        
+            </section>
+        
+        </div>
+
+
+
+
+
+
+
+        </article>
+        <!--****************** end of content  ********************-->
+
+
+    </section>
+    <!--******************************* end of menu and content ***********************************-->
+
+
+
+
+
+
+
+
+
+    <!-- scripts -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+    <script src="../js/waypoints.js"></script>
+    <script src="../js/jquery.countTo.js"></script>
+    <script src="../js/d3.v4.min.js"></script>
+    <script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../js/canvasjs.min.js"></script>
+    <script src="../js/moment-with-locales.js"></script>
+    <script src="../js/bootstrap-datetimepicker.js"></script>
+
+    <script src="../js/jquery.dataTables.min.js"></script>
+    <script src="../js/dataTables.bootstrap.min.js"></script>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
